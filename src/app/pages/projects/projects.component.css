@@ -1,0 +1,238 @@
+/*project*/
+.filter{
+    cursor: pointer;
+  }
+  .projectul{
+    background-color: white;
+    color: #fd6f00;
+    border-radius: 50px;
+    border: #fd6f00 1px solid;
+    padding: 1% 3%;
+    font-weight: bolder;
+    white-space: nowrap;
+   
+  }
+  .activeli{
+    background-color:#fd6f00 ;
+    border-radius: 50px;
+    color: white;
+    padding: 1% 3%;
+    font-weight: bolder;
+    white-space: nowrap;
+  }
+.ProjectBackground{
+  /*background-image: url(/bg.jpg);   /*السر كان في /////// */
+  background-color: var(--background-light);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+.projectCard{
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-top: 10px;
+  
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+
+}
+.projectCard:hover.projectCard::after,.projectCard::before{
+  content: "";
+  position: absolute;
+  height: 102%;
+  width: 98%;
+  background-image: conic-gradient(from var(--angle), transparent 70%, #fd6f00 );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50% ;
+  z-index: -1;
+  border-radius: 5px;
+  animation: 10s spin linear infinite;
+
+}  
+.projectCard::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin {
+  from{
+    --angle:0deg;
+  }
+  to{
+    --angle:360deg;
+
+  }
+
+  
+}
+
+.projectCard:hover {
+    transform: translateY(-5px);
+}
+
+.projectCard .card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: var(--surface-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.projectCard .card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container */
+.projectCard .card-img-top {
+    width: 100%;
+    height: 215px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background-light);
+    padding: 0.5rem;
+}
+
+/* Image Hover Effect */
+.projectCard .card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Image Overlay */
+.projectCard .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 215px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.projectCard .card:hover::before {
+    opacity: 1;
+}
+
+/* Card Body */
+.projectCard .card-body {
+    padding: 1.5rem;
+    background: var(--surface-color);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectCard .card-title {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.projectCard .card-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Filter Buttons */
+.filter {
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--surface-color);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+}
+
+.filter:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.activeli {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.projectul {
+    background: var(--surface-color);
+    color: var(--text-dark);
+}
+
+/* Explore Button */
+.projectCard .btn {
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.projectCard .btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .projectCard .card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .projectCard .card-img-top {
+    filter: brightness(0.95);
+    background-color: var(--surface-color);
+}
+
+[data-theme="dark"] .projectCard .card:hover .card-img-top {
+    filter: brightness(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .projectCard .card-img-top {
+        height: 200px;
+        padding: 0.25rem;
+    }
+    
+    .projectCard .card::before {
+        height: 200px;
+    }
+}
+
+/* Loading Animation */
+.projectCard {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

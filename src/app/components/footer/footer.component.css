@@ -1,0 +1,22 @@
+/*social icons*/
+
+
+.social-icon {
+    color: orangered;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    
+}
+
+.social-icon:hover {
+    transform: translateX(-5px);
+    opacity: .5;
+}
+.social-icon:hover {
+    transform: translateY(-5px);
+    opacity: 0.5;
+}
+
