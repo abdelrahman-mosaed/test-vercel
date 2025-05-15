@@ -7,8 +7,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ClientsComponent } from './pages/clients/clients.component';
-import { ContactMeComponent } from './pages/contact-me/contact-me.component';
-
+import { RouterModule,Routes } from '@angular/router';
+import { ContactComponent } from './pages/contact/contact.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -17,14 +17,17 @@ import { ContactMeComponent } from './pages/contact-me/contact-me.component';
     HomeComponent,
     NavComponent,
     FooterComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ClientsComponent,
+    RouterModule,
+    ContactComponent
   ],
   providers: [],
   bootstrap: [],
   declarations: [
     
   
-    ContactMeComponent
+    ContactComponent
   ]
 })
 export class AppModule { }

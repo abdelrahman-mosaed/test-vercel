@@ -7,6 +7,11 @@
     list-style: none;
 }
 
+
+
+
+
+
 :root {
     /* Light Mode Colors */
     --primary-color: #fd6f00;
@@ -40,99 +45,29 @@
     --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
-body {
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--background-light);
-    transition: background-color var(--transition-speed) ease,
-                color var(--transition-speed) ease;
-}
 
-/* Dark Mode Specific Styles */
-[data-theme="dark"] .card {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px var(--shadow-color);
-}
 
-[data-theme="dark"] .card:hover {
-    background: var(--surface-hover);
-}
-
-[data-theme="dark"] input,
-[data-theme="dark"] textarea {
-    background-color: var(--surface-color);
-    border-color: var(--border-color);
-    color: var(--text-dark);
-}
-
-[data-theme="dark"] input:focus,
-[data-theme="dark"] textarea:focus {
-    border-color: var(--primary-color);
-}
-
-[data-theme="dark"] .nav-link {
-    color: var(--text-light) !important;
-}
-
-[data-theme="dark"] .nav-link:hover {
-    color: var(--primary-color) !important;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    box-shadow: 0 2px 4px var(--shadow-color);
-}
-
-.theme-toggle:hover {
-    transform: scale(1.1);
-    background: var(--surface-hover);
-}
-
-.theme-toggle svg {
-    width: 20px;
-    height: 20px;
-    fill: var(--text-dark);
-}
-
-/* Dark Mode Image Adjustments */
-[data-theme="dark"] img {
-    filter: brightness(0.8) contrast(1.2);
-}
-
-[data-theme="dark"] .img-overlay::after {
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.5) 100%
-    );
-}
 
 /* Container Styles */
 .container-spcail{
     width: 75%;
     margin: auto;
     padding: 0 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 @media (max-width: 1200px) {
     .container-spcail {
-        width: 90%;
+        width: 100%;
+        padding: 0 1rem;
     }
+}
+
+/* Add this to prevent horizontal overflow globally */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Color Utilities */
