@@ -9,6 +9,8 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ClientsComponent } from './pages/clients/clients.component';
 import { RouterModule,Routes } from '@angular/router';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -20,14 +22,14 @@ import { ContactComponent } from './pages/contact/contact.component';
     ProjectsComponent,
     ClientsComponent,
     RouterModule,
-    ContactComponent
+    ContactComponent,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [],
   declarations: [
     
   
-    ContactComponent
   ]
 })
 export class AppModule { }
