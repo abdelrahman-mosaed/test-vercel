@@ -10,6 +10,7 @@ import { ClientsComponent } from './pages/clients/clients.component';
 import { RouterModule,Routes } from '@angular/router';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {NgxSpinnerModule } from 'ngx-spinner'
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClientsComponent,
     RouterModule,
     ContactComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [],
